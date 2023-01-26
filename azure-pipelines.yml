@@ -20,3 +20,18 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+- task: IISWebAppManagementOnMachineGroup@0
+  displayName: "Sample Management"
+  inputs:
+    IISDeploymentType: 'IISWebsite'
+    ActionIISWebsite: 'CreateOrUpdateWebsite'
+    WebsiteName: 'breefoo'
+    WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
+    WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
+  continueOnError: true
+- task: IISWebAppDeploymentOnMachineGroup@
+  displayName: "Sample Deploy"
+  inputs:
+    WebSiteName: 'breefoo'
+    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+  continueOnError: true
