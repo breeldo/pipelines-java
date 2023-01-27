@@ -29,7 +29,7 @@ steps:
     WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
     WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
   continueOnError: true
-- task: IISWebAppDeploymentOnMachineGroup@
+- task: IISWebAppDeploymentOnMachineGroup@0
   displayName: "Sample Deploy"
   inputs:
     WebSiteName: 'breefoo'
