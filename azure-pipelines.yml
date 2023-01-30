@@ -34,4 +34,7 @@ steps:
   inputs:
     WebSiteName: 'breefoo'
     Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+    RemoveAdditionalFilesFlag: true
+    TakeAppOfflineFlag: true
+    XmlTransformation: true
   continueOnError: true
