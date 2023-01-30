@@ -32,7 +32,7 @@ steps:
 - task: IISWebAppDeploymentOnMachineGroup@0
   displayName: "Sample Deploy"
   inputs:
-    WebSiteName: 'breefoo'
+    WebSiteName: 'Sample-Website'
     Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
     RemoveAdditionalFilesFlag: true
     TakeAppOfflineFlag: true
