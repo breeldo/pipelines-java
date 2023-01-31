@@ -28,6 +28,16 @@ steps:
     WebsiteName: 'breefoo'
     WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
     WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
+    AddBinding: true
+    Bindings: 'Add_binding_value'
+    CreateOrUpdateAppPoolForWebsite: true
+    ConfigureAuthenticationForWebsite: true
+    AppPoolNameForWebsite: 'IIS_Application_Pool_Name'
+    DotNetVersionForWebsite: 'v4.0'
+    PipeLineModeForWebsite: 'Integrated'
+    AppPoolIdentityForWebsite: 'ApplicationPoolIdentity'
+    AnonymousAuthenticationForWebsite: true
+    BasicAuthenticationForWebsite: true
   continueOnError: true
 - task: IISWebAppDeploymentOnMachineGroup@0
   displayName: "Sample Deploy"
