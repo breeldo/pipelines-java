@@ -24,20 +24,9 @@ steps:
   displayName: "Sample Management"
   inputs:
     IISDeploymentType: 'IISWebsite'
-    ActionIISWebsite: 'CreateOrUpdateWebsite'
-    WebsiteName: 'breefoo'
-    WebsitePhysicalPath: '%SystemDrive%\inetpub\wwwroot'
-    WebsitePhysicalPathAuth: 'WebsiteUserPassThrough'
-    AddBinding: true
-    Bindings: 'Add_binding_value'
-    CreateOrUpdateAppPoolForWebsite: true
-    ConfigureAuthenticationForWebsite: true
-    AppPoolNameForWebsite: 'IIS_Application_Pool_Name'
-    DotNetVersionForWebsite: 'v4.0'
-    PipeLineModeForWebsite: 'Integrated'
-    AppPoolIdentityForWebsite: 'ApplicationPoolIdentity'
-    AnonymousAuthenticationForWebsite: true
-    BasicAuthenticationForWebsite: true
+    ActionIISWebsite: 'StartWebsite'
+    StartStopWebsiteName: 'website_name'
+    AppCmdCommands: 'additional_commands'
   continueOnError: true
 - task: IISWebAppDeploymentOnMachineGroup@0
   displayName: "Sample Deploy"
